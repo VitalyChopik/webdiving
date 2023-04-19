@@ -180,6 +180,7 @@
 
   &__box {
     display: none;
+    position: relative;
 
     &.active {
       display: flex;
@@ -187,7 +188,10 @@
 
   }
 
-  &__box-text {}
+  &__box-text {
+    width: rem(450);
+    z-index: 1;
+  }
 
   &__box-image {
     margin-top: rem(-60);
@@ -213,5 +217,25 @@
     letter-spacing: 0.05em;
     color: #FFFFFF;
     margin-bottom: rem(32);
+  }
+
+  &__box-image {
+    max-width: rem(750);
+
+    @include media(1200) {
+      max-width: 50%;
+      margin-left: auto;
+    }
+
+    @include media(992) {
+      position: absolute;
+      right: -30%;
+      bottom: 0;
+      max-width: 90%;
+    }
+
+    @include media(500) {
+      display: none;
+    }
   }
 }
