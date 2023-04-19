@@ -110,26 +110,6 @@ function isOnVisibleSpace(element) {
 let listenedElements = [];
 // обработчик события прокрутки экрана. Проверяет все элементы добавленные в listenedElements
 // на предмет попадания(выпадения) в зону видимости
-window.onscroll = function () {
-  listenedElements.forEach(item => {
-    if (!item.el) return;
-    // проверяем находится ли элемент в зоне видимости
-    let result = isOnVisibleSpace(item.el);
-
-    // если элемент находился в зоне видимости и вышел из нее
-    // вызываем обработчик выпадения из зоны видимости
-    if (item.el.isOnVisibleSpace && !result) {
-      return;
-    }
-    // если элемент находился вне зоны видимости и вошел в нее
-    // вызываем обработчик попадания в зону видимости
-    if (!item.el.isOnVisibleSpace && result) {
-      item.el.isOnVisibleSpace = true;
-      item.inVisibleSpace(item.el);
-      return;
-    }
-  });
-}
 
 
 function onVisibleSpaceListener(elementId, cbIn, cbOut) {
@@ -155,6 +135,24 @@ onVisibleSpaceListener("value1",
     animateValue("value4", 1, 8, 2000)
   });
 
+listenedElements.forEach(item => {
+  if (!item.el) return;
+  // проверяем находится ли элемент в зоне видимости
+  let result = isOnVisibleSpace(item.el);
+
+  // если элемент находился в зоне видимости и вышел из нее
+  // вызываем обработчик выпадения из зоны видимости
+  if (item.el.isOnVisibleSpace && !result) {
+    return;
+  }
+  // если элемент находился вне зоны видимости и вошел в нее
+  // вызываем обработчик попадания в зону видимости
+  if (!item.el.isOnVisibleSpace && result) {
+    item.el.isOnVisibleSpace = true;
+    item.inVisibleSpace(item.el);
+    return;
+  }
+});
 
 const tabsItems = document.querySelectorAll('.about__tabs-item'),
   tabsContent = document.querySelectorAll('.about__box');

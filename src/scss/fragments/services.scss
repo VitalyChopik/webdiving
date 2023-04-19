@@ -59,6 +59,7 @@
   &__image {
     width: 100%;
     padding: rem(5) rem(45) rem(50);
+    height: rem(235);
 
     .purple & {
       background: #7435BF;
@@ -75,5 +76,108 @@
   &__text {
     background: #FFFFFF;
     width: 100%;
+    padding: 0 rem(45) rem(37);
+  }
+
+  &__box-price {
+    background: #FFFFFF;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: rem(-80) auto rem(33);
+    padding: rem(32) rem(20) rem(25);
+    z-index: 1;
+  }
+
+  &__text-type {
+    font-family: 'Franklin Gothic Medium';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #363636;
+    margin-bottom: rem(20);
+  }
+
+  &__price {
+    font-family: 'Franklin Gothic Medium';
+    font-style: normal;
+    font-weight: 400;
+    font-size: rem(34);
+    line-height: rem(38);
+    text-align: center;
+    text-transform: uppercase;
+
+    .purple & {
+      color: #7435BF;
+    }
+
+    .blue & {
+      color: #3846C5;
+    }
+
+    &::before {
+      content: "от ";
+      font-size: rem(16);
+      line-height: rem(19);
+      margin-right: 3px;
+    }
+  }
+
+  &__list {
+    margin-bottom: rem(30);
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    padding-left: rem(20);
+  }
+
+  &__item {
+    text-align: left;
+
+    font-size: 14px;
+    line-height: 30px;
+    color: #7E7E7E;
+    list-style: disc;
+
+    .purple & {
+      &::marker {
+        color: #7435BF;
+      }
+    }
+
+    .blue & {
+      &::marker {
+        color: #3846C5;
+      }
+    }
+  }
+
+  &__btn {
+    height: rem(50);
+    max-width: rem(214);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    transition: all 0.5s;
+
+    .purple & {
+      background: #7435BF;
+    }
+
+    .blue & {
+      background: #3846C5;
+    }
+
+    &:hover {
+      background: linear-gradient(90deg, #3369E7 0%, #8E43E7 100%);
+    }
   }
 }
