@@ -1,0 +1,79 @@
+.services {
+  &__section {
+    background-image: url(@img/services__bg.png);
+    padding: rem(60) 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__title {
+    font-family: 'Franklin Gothic Medium';
+    font-style: normal;
+    font-weight: 400;
+    font-size: rem(36);
+    line-height: rem(41);
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: rem(20);
+
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+    color: #FFFFFF;
+    max-width: rem(820);
+    margin: 0 auto rem(65);
+  }
+
+  &__block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(30);
+  }
+
+  &__box {
+    border-radius: 8px;
+    width: calc(33.3333% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+    @include media(992) {
+      width: calc(50% - 15px);
+    }
+
+    @include media(500) {
+      width: 100%;
+    }
+
+  }
+
+  &__image {
+    width: 100%;
+    padding: rem(5) rem(45) rem(50);
+
+    .purple & {
+      background: #7435BF;
+
+    }
+
+    .blue & {
+      background: #3846C5;
+    }
+  }
+
+  &__box-img {}
+
+  &__text {
+    background: #FFFFFF;
+    width: 100%;
+  }
+}

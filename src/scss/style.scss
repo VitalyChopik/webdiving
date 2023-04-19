@@ -22,7 +22,7 @@
 // @import 'libs/swiper';
 
 // Подлючение кастомного скрола для всего сайта =======================================================================================================================
-@import 'config/scrollbar';
+// @import 'config/scrollbar';
 
 // Общие параметры, шаблоны(заготовки) и вспомагательные классы =======================================================================================================================
 @import 'config/base';
@@ -36,3 +36,5 @@
 @import 'fragments/hero';
 @import 'fragments/statistics';
 @import 'fragments/about';
+@import 'fragments/portfolio';
+@import 'fragments/services';

@@ -57,7 +57,7 @@
   transition: all 0.5s;
 
   &:hover {
-    background: #FFFFFF;
-    color: #000000;
+    background: linear-gradient(90deg, #3369E7 0%, #8E43E7 100%);
+    border: none;
   }
 }

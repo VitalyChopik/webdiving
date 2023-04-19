@@ -38,7 +38,14 @@
     color: #FFFFFF;
   }
 
-  &__btn {}
+  &__btn {
+    background: linear-gradient(90deg, #8E43E7 0%, #3369E7 100%);
+    border: none;
+
+    &:hover {
+      background: linear-gradient(90deg, #3369E7 0%, #8E43E7 100%);
+    }
+  }
 
   &__image {
     max-width: rem(530);

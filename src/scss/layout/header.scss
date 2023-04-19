@@ -5,6 +5,7 @@
   position: sticky;
   top: 0;
   padding: 8px 0;
+  z-index: 9998;
 
   &.sticky {
     // ..стили для липкого хедера
@@ -16,7 +17,43 @@
     align-items: center;
   }
 
-  &__menu {}
+  &__logo {
+    z-index: 2;
+  }
+
+  &__menu {
+    @include media(912) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: rem(300);
+      height: 100%;
+      background: #05172C;
+      display: flex;
+      padding: rem(25);
+      padding-top: rem(100);
+      transition: all 0.5s;
+      transform: translate3d(100%, 0, 0);
+      z-index: 1;
+
+      .menu-open & {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+
+
+    .menu {
+      &__list {
+        @include media(912) {
+          flex-direction: column;
+        }
+
+      }
+    }
+  }
 
 
 }
@@ -28,13 +65,15 @@
 .icon-menu {
   display: none;
 
-  @include media(767) {
+  @include media(912) {
     display: block;
     position: relative;
     width: rem(30);
     height: rem(18);
+    margin-left: auto;
     cursor: pointer;
     z-index: 5;
+    background: none;
 
     span,
     &::before,
@@ -45,7 +84,7 @@
       position: absolute;
       width: 100%;
       height: rem(2);
-      background-color: #000;
+      background-color: #fff;
     }
 
     &::before {
