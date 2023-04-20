@@ -10,8 +10,10 @@
  */
 ?>
 
-<section class="about__section">
-  <img src="<?php echo get_template_directory_uri()?>/dist/images/about__bg.png" alt="" class="about__bg">
+<section class="about__section" id="about">
+      <?php 
+      $imageBG = get_field('imageBG');
+      echo wp_get_attachment_image( $imageBG, 'full', false, ['class'=> 'about__bg']);?>
   <div class="about__container">
     <ul class="about__tabs-list">
       <li class="about__tabs-item" data-tabs-btn="1">О нас</li>
@@ -55,11 +57,6 @@
           if( have_rows('stacks') ):
             while( have_rows('stacks') ) : the_row();
             ?>
-            <div class="advantages__box">
-              <div class="advantages__icon">
-
-              </div>
-            </div>
             <div class="stack__box">
                 <?php
                   $stack = get_sub_field('stack');

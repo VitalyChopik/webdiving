@@ -135,25 +135,30 @@ if (statisticsBox) {
       animateValue("value3", 1, 14, 2000)
       animateValue("value4", 1, 8, 2000)
     });
+  function listenedElementsFun() {
+    listenedElements.forEach(item => {
+      if (!item.el) return;
+      // проверяем находится ли элемент в зоне видимости
+      let result = isOnVisibleSpace(item.el);
 
-  listenedElements.forEach(item => {
-    if (!item.el) return;
-    // проверяем находится ли элемент в зоне видимости
-    let result = isOnVisibleSpace(item.el);
-
-    // если элемент находился в зоне видимости и вышел из нее
-    // вызываем обработчик выпадения из зоны видимости
-    if (item.el.isOnVisibleSpace && !result) {
-      return;
-    }
-    // если элемент находился вне зоны видимости и вошел в нее
-    // вызываем обработчик попадания в зону видимости
-    if (!item.el.isOnVisibleSpace && result) {
-      item.el.isOnVisibleSpace = true;
-      item.inVisibleSpace(item.el);
-      return;
-    }
-  });
+      // если элемент находился в зоне видимости и вышел из нее
+      // вызываем обработчик выпадения из зоны видимости
+      if (item.el.isOnVisibleSpace && !result) {
+        return;
+      }
+      // если элемент находился вне зоны видимости и вошел в нее
+      // вызываем обработчик попадания в зону видимости
+      if (!item.el.isOnVisibleSpace && result) {
+        item.el.isOnVisibleSpace = true;
+        item.inVisibleSpace(item.el);
+        return;
+      }
+    });
+  }
+  listenedElementsFun();
+  window.onscroll = function () {
+    listenedElementsFun();
+  }
 }
 
 

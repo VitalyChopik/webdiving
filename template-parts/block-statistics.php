@@ -9,7 +9,7 @@
  * @param   (int|string) $post_id The post ID this block is saved to.
  */
 ?>
-<div class="statistics__section">
+<div class="statistics__section" id="statistics">
     <div class="statistics__container">
       <div class="statistics__block">
         <div class="statistics__box">

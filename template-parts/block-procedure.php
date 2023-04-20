@@ -1,67 +1,39 @@
-<section class="procedure__section">
-    <div class="procedure__container">
-      <h2 class="procedure__title">Порядок работы</h2>
-      <div class="procedure__block">
-        <div class="procedure__box">
-          <span class="procedure__box-number">01</span>
-          <div class="procedure__box-image">
-            <img src="<?php echo get_template_directory_uri()?>/dist/images/procedure/1.svg" alt="" class="procedure__box-icon">
-          </div>
-          <h3 class="procedure__box-title">Обсуждение пожеланий</h3>
-          <p class="procedure__box-description">Анализ первичной информации, знакомство
-            со спецификой деятельности, согласование
-            пожеланий и требований к сайту</p>
+<?php
+
+/**
+ * Block Name: procedure
+ *
+ * @param array $block The block settings and attributes.
+ * @param string $content The block inner HTML (empty).
+ * @param bool $is_preview True during AJAX preview.
+ * @param   (int|string) $post_id The post ID this block is saved to.
+ */
+?>
+<section class="procedure__section" id="procedure">
+  <div class="procedure__container">
+    <?php if(get_field('title')){
+      ?>
+      <h2 class="procedure__title"><?php the_field('title')?></h2>
+      <?php
+    }?>
+    <div class="procedure__block">
+    <?php
+      if( have_rows('blocks') ):
+        $i=0;
+        while( have_rows('blocks') ) : the_row(); $i++?>
+      <div class="procedure__box">
+        <span class="procedure__box-number">0<?php echo $i;?></span>
+        <div class="procedure__box-image">
+          <?php 
+            $image = get_sub_field('icon');
+            echo wp_get_attachment_image( $image, 'full', false, ['class'=> 'procedure__box-icon']);?>
         </div>
-        <div class="procedure__box">
-          <span class="procedure__box-number">02</span>
-          <div class="procedure__box-image">
-            <img src="<?php echo get_template_directory_uri()?>/dist/images/procedure/2.svg" alt="" class="procedure__box-icon">
-          </div>
-          <h3 class="procedure__box-title">состовление технического задания</h3>
-          <p class="procedure__box-description">Анализ первичной информации, знакомство
-            со спецификой деятельности, согласование
-            пожеланий и требований к сайту</p>
-        </div>
-        <div class="procedure__box">
-          <span class="procedure__box-number">03</span>
-          <div class="procedure__box-image">
-            <img src="<?php echo get_template_directory_uri()?>/dist/images/procedure/3.svg" alt="" class="procedure__box-icon">
-          </div>
-          <h3 class="procedure__box-title">разработка дизайна</h3>
-          <p class="procedure__box-description">Анализ первичной информации, знакомство
-            со спецификой деятельности, согласование
-            пожеланий и требований к сайту</p>
-        </div>
-        <div class="procedure__box">
-          <span class="procedure__box-number">04</span>
-          <div class="procedure__box-image">
-            <img src="<?php echo get_template_directory_uri()?>/dist/images/procedure/4.svg" alt="" class="procedure__box-icon">
-          </div>
-          <h3 class="procedure__box-title">Верстка макетов страниц</h3>
-          <p class="procedure__box-description">Анализ первичной информации, знакомство
-            со спецификой деятельности, согласование
-            пожеланий и требований к сайту</p>
-        </div>
-        <div class="procedure__box">
-          <span class="procedure__box-number">05</span>
-          <div class="procedure__box-image">
-            <img src="<?php echo get_template_directory_uri()?>/dist/images/procedure/5.svg" alt="" class="procedure__box-icon">
-          </div>
-          <h3 class="procedure__box-title">настройка и оптимизация</h3>
-          <p class="procedure__box-description">Анализ первичной информации, знакомство
-            со спецификой деятельности, согласование
-            пожеланий и требований к сайту</p>
-        </div>
-        <div class="procedure__box">
-          <span class="procedure__box-number">06</span>
-          <div class="procedure__box-image">
-            <img src="<?php echo get_template_directory_uri()?>/dist/images/procedure/6.svg" alt="" class="procedure__box-icon">
-          </div>
-          <h3 class="procedure__box-title">тестирование и наполнение</h3>
-          <p class="procedure__box-description">Анализ первичной информации, знакомство
-            со спецификой деятельности, согласование
-            пожеланий и требований к сайту</p>
-        </div>
+        <h3 class="procedure__box-title"><?php the_sub_field('title')?></h3>
+        <p class="procedure__box-description"><?php the_sub_field('text')?></p>
       </div>
+       <?php endwhile;
+      endif;
+    ?>
     </div>
+  </div>
   </section>
