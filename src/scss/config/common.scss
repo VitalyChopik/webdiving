@@ -5,11 +5,12 @@
 }
 
 .menu {
-  margin-left: auto;
+  width: 100%;
 
   &__list {
     display: flex;
     gap: 40px;
+    margin-left: auto;
   }
 
   &__link {

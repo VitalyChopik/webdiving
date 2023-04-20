@@ -1,6 +1,10 @@
 .statistics {
   &__section {
     padding: rem(65) 0;
+
+    @include media(768) {
+      padding: rem(30) 0;
+    }
   }
 
   &__block {

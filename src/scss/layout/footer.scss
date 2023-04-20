@@ -40,11 +40,7 @@
   }
 
   &__btn {
-    margin-left: rem(100);
-
-    @include media(1150) {
-      margin-left: rem(40);
-    }
+    margin-left: auto;
 
     @include media(1100) {
       margin-left: rem(0);

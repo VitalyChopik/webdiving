@@ -23,7 +23,7 @@ import {
 // import AOS from 'aos'
 
 /* Раскомментировать для использования */
-// import Swiper, { Navigation, Pagination } from 'swiper'
+import Swiper, { Pagination } from 'swiper'
 
 // Включить/выключить FLS (Full Logging System) (в работе)
 window['FLS'] = location.hostname === 'localhost'
@@ -68,113 +68,173 @@ menuInit()
 // togglePopupWindows()
 // =======================================================================================================
 
+const statisticsBox = document.querySelectorAll('.statistics__box');
+if (statisticsBox) {
+  function animateValue(id, start, end, duration) {
+    if (start === end) return;
+    const range = end - start;
+    let current = start;
+    const increment = end > start ? 1 : -1;
+    const stepTime = Math.abs(Math.floor(duration / range));
+    const obj = document.getElementById(id);
+    const timer = setInterval(function () {
+      current += increment;
+      if (!obj) {
+        clearInterval(timer);
+        return;
+      } else {
+        obj.innerHTML = current;
+      }
+      if (current === end) {
+        clearInterval(timer);
+      }
+    }, stepTime);
+  }
 
-function animateValue(id, start, end, duration) {
-  if (start === end) return;
-  const range = end - start;
-  let current = start;
-  const increment = end > start ? 1 : -1;
-  const stepTime = Math.abs(Math.floor(duration / range));
-  const obj = document.getElementById(id);
-  const timer = setInterval(function () {
-    current += increment;
-    if (!obj) {
-      clearInterval(timer);
+  const forward = document.getElementById('forward')
+
+  // функция определяет нахождение элемента в области видимости
+  // если элемент видно - возвращает true
+  // если элемент невидно - возвращает false
+  function isOnVisibleSpace(element) {
+    if (element) {
+      let bodyHeight = window.innerHeight;
+      let elemRect = element.getBoundingClientRect();
+      let offset = elemRect.top;// - bodyRect.top;
+      if (offset < 0) return false;
+      if (offset > bodyHeight) return false;
+      return true;
+    }
+  }
+
+  // глобальный объект с элементами, для которых отслеживаем их положение в зоне видимости
+  let listenedElements = [];
+  // обработчик события прокрутки экрана. Проверяет все элементы добавленные в listenedElements
+  // на предмет попадания(выпадения) в зону видимости
+
+
+  function onVisibleSpaceListener(elementId, cbIn, cbOut) {
+    // получаем ссылку на объект элемента
+    let el = document.getElementById(elementId);
+    // добавляем элемент и обработчики событий
+    // в массив отслеживаемых элементов
+    listenedElements.push({
+      el: el,
+      inVisibleSpace: cbIn,
+      outVisibleSpace: cbOut
+    });
+  }
+
+  onVisibleSpaceListener("value1",
+    el => {
+      // функция вызываемая при попадании элемента в зону видимости
+      // тут вставляем код запуска анимации
+      forward.beginElement()
+      animateValue("value1", 1, 250, 2000)
+      animateValue("value2", 1, 20, 2000)
+      animateValue("value3", 1, 14, 2000)
+      animateValue("value4", 1, 8, 2000)
+    });
+
+  listenedElements.forEach(item => {
+    if (!item.el) return;
+    // проверяем находится ли элемент в зоне видимости
+    let result = isOnVisibleSpace(item.el);
+
+    // если элемент находился в зоне видимости и вышел из нее
+    // вызываем обработчик выпадения из зоны видимости
+    if (item.el.isOnVisibleSpace && !result) {
       return;
-    } else {
-      obj.innerHTML = current;
     }
-    if (current === end) {
-      clearInterval(timer);
+    // если элемент находился вне зоны видимости и вошел в нее
+    // вызываем обработчик попадания в зону видимости
+    if (!item.el.isOnVisibleSpace && result) {
+      item.el.isOnVisibleSpace = true;
+      item.inVisibleSpace(item.el);
+      return;
     }
-  }, stepTime);
-}
-
-const forward = document.getElementById('forward')
-
-// функция определяет нахождение элемента в области видимости
-// если элемент видно - возвращает true
-// если элемент невидно - возвращает false
-function isOnVisibleSpace(element) {
-  if (element) {
-    let bodyHeight = window.innerHeight;
-    let elemRect = element.getBoundingClientRect();
-    let offset = elemRect.top;// - bodyRect.top;
-    if (offset < 0) return false;
-    if (offset > bodyHeight) return false;
-    return true;
-  }
-}
-
-// глобальный объект с элементами, для которых отслеживаем их положение в зоне видимости
-let listenedElements = [];
-// обработчик события прокрутки экрана. Проверяет все элементы добавленные в listenedElements
-// на предмет попадания(выпадения) в зону видимости
-
-
-function onVisibleSpaceListener(elementId, cbIn, cbOut) {
-  // получаем ссылку на объект элемента
-  let el = document.getElementById(elementId);
-  // добавляем элемент и обработчики событий
-  // в массив отслеживаемых элементов
-  listenedElements.push({
-    el: el,
-    inVisibleSpace: cbIn,
-    outVisibleSpace: cbOut
   });
 }
 
-onVisibleSpaceListener("value1",
-  el => {
-    // функция вызываемая при попадании элемента в зону видимости
-    // тут вставляем код запуска анимации
-    forward.beginElement()
-    animateValue("value1", 1, 250, 2000)
-    animateValue("value2", 1, 20, 2000)
-    animateValue("value3", 1, 14, 2000)
-    animateValue("value4", 1, 8, 2000)
-  });
-
-listenedElements.forEach(item => {
-  if (!item.el) return;
-  // проверяем находится ли элемент в зоне видимости
-  let result = isOnVisibleSpace(item.el);
-
-  // если элемент находился в зоне видимости и вышел из нее
-  // вызываем обработчик выпадения из зоны видимости
-  if (item.el.isOnVisibleSpace && !result) {
-    return;
-  }
-  // если элемент находился вне зоны видимости и вошел в нее
-  // вызываем обработчик попадания в зону видимости
-  if (!item.el.isOnVisibleSpace && result) {
-    item.el.isOnVisibleSpace = true;
-    item.inVisibleSpace(item.el);
-    return;
-  }
-});
 
 const tabsItems = document.querySelectorAll('.about__tabs-item'),
   tabsContent = document.querySelectorAll('.about__box');
 tabsItems[0].classList.add('active');
 tabsContent[0].classList.add('active');
+if (tabsItems) {
+  // Добавляем обработчик события "click" для каждого элемента в tabsItems
+  tabsItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      // Добавляем класс "active" к элементу в tabsContent с тем же индексом
+      tabsContent.forEach((content, contentIndex) => {
+        if (contentIndex === index) {
+          content.classList.add('active');
+        } else {
+          content.classList.remove('active');
+        }
+      });
 
-// Добавляем обработчик события "click" для каждого элемента в tabsItems
-tabsItems.forEach((item, index) => {
-  item.addEventListener('click', () => {
-    // Добавляем класс "active" к элементу в tabsContent с тем же индексом
-    tabsContent.forEach((content, contentIndex) => {
-      if (contentIndex === index) {
-        content.classList.add('active');
-      } else {
-        content.classList.remove('active');
-      }
+      // Добавляем класс "active" к нажатому элементу в tabsItems
+      tabsItems.forEach((tab) => {
+        tab.classList.remove('active');
+      });
+      item.classList.add('active');
     });
-
-    // Добавляем класс "active" к нажатому элементу в tabsItems
-    tabsItems.forEach((tab) => {
-      tab.classList.remove('active');
-    });
-    item.classList.add('active');
   });
-});
+}
+
+
+const portfolioSlider = document.querySelector('.portfolio__swiper');
+
+if (portfolioSlider) {
+  var swiper = Swiper;
+  var init = false;
+  function swiperCard() {
+    if (window.innerWidth <= 768) {
+      if (!init) {
+        init = true;
+        swiper = new Swiper(portfolioSlider, {
+          modules: [Pagination],
+          pagination: {
+            el: ".swiper-pagination",
+            dynamicBullets: true,
+            clickable: true
+          },
+          loop: true
+        });
+      }
+    } else if (init) {
+      swiper.destroy();
+      init = false;
+    }
+  }
+  swiperCard();
+  window.addEventListener("resize", swiperCard);
+}
+
+
+
+// получаем список всех блоков сервисов
+const serviceBoxes = document.querySelectorAll('.services__box');
+// получаем кнопку "Показать еще"
+const showMoreButton = document.querySelector('.services__more');
+if (serviceBoxes && showMoreButton) {
+  // задаем количество блоков, которые будем показывать по умолчанию
+  const defaultShowCount = 3;
+
+
+  // скрываем все блоки, начиная с четвертого
+  for (let i = defaultShowCount; i < serviceBoxes.length; i++) {
+    serviceBoxes[i].classList.add('hidden');
+  }
+
+  // добавляем обработчик клика на кнопку "Показать еще"
+  showMoreButton.addEventListener('click', function () {
+    // показываем все скрытые блоки
+    for (let i = defaultShowCount; i < serviceBoxes.length; i++) {
+      serviceBoxes[i].classList.remove('hidden');
+    }
+    // скрываем кнопку "Показать еще"
+    showMoreButton.classList.add('hidden');
+  });
+}

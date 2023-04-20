@@ -1,6 +1,10 @@
 .portfolio {
   &__section {
     padding: rem(110) 0;
+
+    @include media(768) {
+      padding: rem(50) 0 rem(60);
+    }
   }
 
   &__title {
@@ -13,12 +17,23 @@
     text-transform: uppercase;
     color: #9F9F9F;
     margin-bottom: rem(60);
+
+    @include media(768) {
+      font-size: 30px;
+      line-height: 34px;
+      margin-bottom: rem(50);
+    }
   }
 
   &__block {
     display: flex;
     flex-wrap: wrap;
     gap: rem(30);
+
+    @include media(768) {
+      flex-wrap: nowrap;
+      gap: 0;
+    }
   }
 
   &__box {
@@ -92,6 +107,51 @@
       img {
         opacity: 1;
       }
+    }
+  }
+
+  &__pagination {
+    margin: 20px auto;
+    display: none;
+    align-items: center;
+
+    @include media(768) {
+      display: flex;
+    }
+
+    .swiper-pagination-bullet {
+      min-width: 6px;
+      min-height: 6px;
+      max-width: 6px;
+      max-height: 6px;
+      background: #EBEBEB;
+      border-radius: 50%;
+      display: flex;
+      margin: 0 5px;
+    }
+
+    .swiper-pagination-bullet-active-prev-prev,
+    .swiper-pagination-bullet-active-next-next {
+      min-width: 8px;
+      min-height: 8px;
+      max-width: 8px;
+      max-height: 8px;
+    }
+
+    .swiper-pagination-bullet-active-prev,
+    .swiper-pagination-bullet-active-next {
+      min-width: 10px;
+      min-height: 10px;
+      max-width: 10px;
+      max-height: 10px;
+    }
+
+    .swiper-pagination-bullet-active.swiper-pagination-bullet-active-main {
+      min-width: 10px;
+      min-height: 10px;
+      max-width: 10px;
+      max-height: 10px;
+      background: linear-gradient(90deg, #3369E7 0%, #8E43E7 100%);
     }
   }
 }

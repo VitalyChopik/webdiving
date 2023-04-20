@@ -1,6 +1,10 @@
 .procedure {
   &__section {
     padding: rem(110) 0;
+
+    @include media(768) {
+      padding: rem(50) 0;
+    }
   }
 
   &__title {
@@ -13,6 +17,12 @@
     text-transform: uppercase;
     color: #9F9F9F;
     margin-bottom: rem(60);
+
+    @include media(768) {
+      font-size: 30px;
+      line-height: 34px;
+      margin-bottom: rem(50);
+    }
   }
 
   &__block {
@@ -46,10 +56,17 @@
     margin-bottom: rem(-80);
   }
 
+  &__box-image {
+    height: rem(80);
+    display: flex;
+    justify-content: center;
+    margin: 0 auto rem(17);
+    align-items: end;
+  }
+
   &__box-icon {
     max-height: rem(80);
     width: auto;
-    margin: 0 auto rem(17);
   }
 
   &__box-title {

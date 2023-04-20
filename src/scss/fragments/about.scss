@@ -3,6 +3,10 @@
     padding: rem(60) 0;
 
     position: relative;
+
+    @include media(768) {
+      padding: rem(30) 0 rem(35);
+    }
   }
 
   &__bg {
@@ -25,8 +29,9 @@
     margin-bottom: rem(54);
 
     @include media(700) {
-      flex-direction: column;
-      align-items: start;
+      gap: rem(10);
+      justify-content: space-between;
+      margin-bottom: rem(40);
     }
   }
 
@@ -43,7 +48,6 @@
     font-family: 'Franklin Gothic Medium';
     transition: all 0.5s;
 
-    &::before,
     &::after {
       position: absolute;
       bottom: -5px;
@@ -61,18 +65,13 @@
     &:hover {
       opacity: 1;
 
-      &::before,
       &::after {
         content: "";
       }
 
-      &::before {
-        width: 100%;
-        background: #838C96;
-      }
 
       &::after {
-        width: 80%;
+        width: 100%;
         right: 0;
         background: #3094FF;
       }
@@ -81,21 +80,22 @@
     &.active {
       opacity: 1;
 
-      &::before,
+
       &::after {
         content: "";
       }
 
-      &::before {
-        width: 100%;
-        background: #838C96;
-      }
-
       &::after {
-        width: 80%;
+        width: 100%;
         right: 0;
         background: #3094FF;
       }
+    }
+
+    @include media(700) {
+      font-size: 19px;
+      line-height: 22px;
+      white-space: nowrap;
     }
   }
 
@@ -185,6 +185,14 @@
 
       &__box {
         margin-bottom: rem(20);
+
+        @include media(768) {
+          width: calc(25% - 15px);
+        }
+
+        img {
+          max-width: 100%;
+        }
       }
     }
   }
@@ -247,6 +255,23 @@
 
     @include media(500) {
       display: none;
+    }
+  }
+
+  &__box-btn {
+    @include media(500) {
+      background: linear-gradient(90deg, #8E43E7 0%, #3369E7 100%);
+      border: none;
+      width: 100%;
+      border-radius: 10px;
+      font-size: 18px;
+      line-height: 21px;
+      height: rem(60);
+
+      &:hover {
+        background: linear-gradient(90deg, #3369E7 0%, #8E43E7 100%);
+      }
+
     }
   }
 }

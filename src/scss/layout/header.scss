@@ -26,6 +26,7 @@
     align-items: center;
 
     @include media(1100) {
+      margin-left: auto;
       position: fixed;
       top: 0;
       left: 0;
@@ -62,11 +63,7 @@
   }
 
   &__btn {
-    margin-left: rem(100);
-
-    @include media(1150) {
-      margin-left: rem(40);
-    }
+    margin-left: auto;
 
     @include media(1100) {
       margin-left: rem(0);
