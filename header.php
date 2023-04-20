@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <?php wp_head();?>
+  <meta name="yandex-verification" content="fbece906592fa661" />
+  <meta name="google-site-verification" content="yU7kQS4FQRayJkvOrdFMVOp1QvyoBYQ6-WH5w-KASRI" />
 </head>
 
 <body>
