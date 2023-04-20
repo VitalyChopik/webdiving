@@ -1,0 +1,182 @@
+<div class="services__section">
+    <img src="<?php echo get_template_directory_uri()?>/dist/images/services__bg.png" alt="" class="services__bg">
+    <div class="services__container">
+      <h2 class="services__title">Услуги и цены</h2>
+      <p class="services__subtitle">Мы подходим к каждому клиенту полностью индивидуально. Цены могут варьироваться в
+        зависимости от спецификации Вашего сайта и удалённости сервера. Мы оказываем качественную поддержку</p>
+      <div class="services__block">
+        <article class="services__box purple">
+          <div class="services__image">
+            <img src="<?php echo get_template_directory_uri()?>/dist/images/services/1.png" alt="" class="services__box-img">
+          </div>
+          <div class="services__text">
+            <div class="services__box-price">
+              <h3 class="services__text-type">Landing page</h3>
+              <span class="services__price">300$</span>
+            </div>
+            <ul class="services__list">
+              <li class="services__item">Быстрое исполнение</li>
+              <li class="services__item">Бесплатный хостинг</li>
+              <li class="services__item">Резервное копирование</li>
+              <li class="services__item">Информационная поддержка</li>
+              <li class="services__item">Отслеживание ошибок</li>
+            </ul>
+            <a href="#" class="services__btn">Узнать подробнее</a>
+          </div>
+        </article>
+        <article class="services__box purple">
+          <div class="services__image">
+            <img src="<?php echo get_template_directory_uri()?>/dist/images/services/2.png" alt="" class="services__box-img">
+          </div>
+          <div class="services__text">
+            <div class="services__box-price">
+              <h3 class="services__text-type">Landing page</h3>
+              <span class="services__price">300$</span>
+            </div>
+            <ul class="services__list">
+              <li class="services__item">Быстрое исполнение</li>
+              <li class="services__item">Бесплатный хостинг</li>
+              <li class="services__item">Резервное копирование</li>
+              <li class="services__item">Информационная поддержка</li>
+              <li class="services__item">Отслеживание ошибок</li>
+            </ul>
+            <a href="#" class="services__btn">Узнать подробнее</a>
+          </div>
+        </article>
+        <article class="services__box purple">
+          <div class="services__image">
+            <img src="<?php echo get_template_directory_uri()?>/dist/images/services/3.png" alt="" class="services__box-img">
+          </div>
+          <div class="services__text">
+            <div class="services__box-price">
+              <h3 class="services__text-type">Landing page</h3>
+              <span class="services__price">300$</span>
+            </div>
+            <ul class="services__list">
+              <li class="services__item">Быстрое исполнение</li>
+              <li class="services__item">Бесплатный хостинг</li>
+              <li class="services__item">Резервное копирование</li>
+              <li class="services__item">Информационная поддержка</li>
+              <li class="services__item">Отслеживание ошибок</li>
+            </ul>
+            <a href="#" class="services__btn">Узнать подробнее</a>
+          </div>
+        </article>
+        <article class="services__box blue">
+          <div class="services__image">
+            <img src="<?php echo get_template_directory_uri()?>/dist/images/services/4.png" alt="" class="services__box-img">
+          </div>
+          <div class="services__text">
+            <div class="services__box-price">
+              <h3 class="services__text-type">Landing page</h3>
+              <span class="services__price">300$</span>
+            </div>
+            <ul class="services__list">
+              <li class="services__item">Быстрое исполнение</li>
+              <li class="services__item">Бесплатный хостинг</li>
+              <li class="services__item">Резервное копирование</li>
+              <li class="services__item">Информационная поддержка</li>
+              <li class="services__item">Отслеживание ошибок</li>
+            </ul>
+            <a href="#" class="services__btn">Узнать подробнее</a>
+          </div>
+        </article>
+        <article class="services__box blue">
+          <div class="services__image">
+            <img src="<?php echo get_template_directory_uri()?>/dist/images/services/5.png" alt="" class="services__box-img">
+          </div>
+          <div class="services__text">
+            <div class="services__box-price">
+              <h3 class="services__text-type">Landing page</h3>
+              <span class="services__price">300$</span>
+            </div>
+            <ul class="services__list">
+              <li class="services__item">Быстрое исполнение</li>
+              <li class="services__item">Бесплатный хостинг</li>
+              <li class="services__item">Резервное копирование</li>
+              <li class="services__item">Информационная поддержка</li>
+              <li class="services__item">Отслеживание ошибок</li>
+            </ul>
+            <a href="#" class="services__btn">Узнать подробнее</a>
+          </div>
+        </article>
+        <article class="services__box blue">
+          <div class="services__image">
+            <img src="<?php echo get_template_directory_uri()?>/dist/images/services/6.png" alt="" class="services__box-img">
+          </div>
+          <div class="services__text">
+            <div class="services__box-price">
+              <h3 class="services__text-type">Landing page</h3>
+              <span class="services__price">300$</span>
+            </div>
+            <ul class="services__list">
+              <li class="services__item">Быстрое исполнение</li>
+              <li class="services__item">Бесплатный хостинг</li>
+              <li class="services__item">Резервное копирование</li>
+              <li class="services__item">Информационная поддержка</li>
+              <li class="services__item">Отслеживание ошибок</li>
+            </ul>
+            <a href="#" class="services__btn">Узнать подробнее</a>
+          </div>
+        </article>
+        <article class="services__box blue">
+          <div class="services__image">
+            <img src="<?php echo get_template_directory_uri()?>/dist/images/services/6.png" alt="" class="services__box-img">
+          </div>
+          <div class="services__text">
+            <div class="services__box-price">
+              <h3 class="services__text-type">Landing page</h3>
+              <span class="services__price">300$</span>
+            </div>
+            <ul class="services__list">
+              <li class="services__item">Быстрое исполнение</li>
+              <li class="services__item">Бесплатный хостинг</li>
+              <li class="services__item">Резервное копирование</li>
+              <li class="services__item">Информационная поддержка</li>
+              <li class="services__item">Отслеживание ошибок</li>
+            </ul>
+            <a href="#" class="services__btn">Узнать подробнее</a>
+          </div>
+        </article>
+        <article class="services__box blue">
+          <div class="services__image">
+            <img src="<?php echo get_template_directory_uri()?>/dist/images/services/6.png" alt="" class="services__box-img">
+          </div>
+          <div class="services__text">
+            <div class="services__box-price">
+              <h3 class="services__text-type">Landing page</h3>
+              <span class="services__price">300$</span>
+            </div>
+            <ul class="services__list">
+              <li class="services__item">Быстрое исполнение</li>
+              <li class="services__item">Бесплатный хостинг</li>
+              <li class="services__item">Резервное копирование</li>
+              <li class="services__item">Информационная поддержка</li>
+              <li class="services__item">Отслеживание ошибок</li>
+            </ul>
+            <a href="#" class="services__btn">Узнать подробнее</a>
+          </div>
+        </article>
+        <article class="services__box blue">
+          <div class="services__image">
+            <img src="<?php echo get_template_directory_uri()?>/dist/images/services/6.png" alt="" class="services__box-img">
+          </div>
+          <div class="services__text">
+            <div class="services__box-price">
+              <h3 class="services__text-type">Landing page</h3>
+              <span class="services__price">300$</span>
+            </div>
+            <ul class="services__list">
+              <li class="services__item">Быстрое исполнение</li>
+              <li class="services__item">Бесплатный хостинг</li>
+              <li class="services__item">Резервное копирование</li>
+              <li class="services__item">Информационная поддержка</li>
+              <li class="services__item">Отслеживание ошибок</li>
+            </ul>
+            <a href="#" class="services__btn">Узнать подробнее</a>
+          </div>
+        </article>
+        <a class="services__more">Все услуги</a>
+      </div>
+    </div>
+  </div>
