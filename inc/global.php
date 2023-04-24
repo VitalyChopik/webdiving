@@ -29,3 +29,10 @@ function blog_setup() {
 add_action( 'after_setup_theme', 'blog_setup' );
 
 
+
+
+
+add_filter( 'wpcf7_form_autocomplete', function ( $autocomplete ) {
+	$autocomplete = 'off';
+	return $autocomplete;
+}, 10, 1 );

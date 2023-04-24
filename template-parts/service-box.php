@@ -24,6 +24,6 @@
       $serviceBtn = get_field('service__btn', $post);
       $postLink = get_permalink();
     ?>
-    <a href="<?php if(!$postLink){ echo $postLink;} else { ?> # <?php } ?>" class="services__btn">Узнать подробнее</a>
+    <a <?php if(!$postLink){ ?>href="<?php echo $postLink; ?>"<?php } else { ?> # <?php } ?> class="services__btn" <?php if(!$postLink){} else { ?> data-type="offerPopup" <?php } ?> >Узнать подробнее</a>
   </div>
 </article>

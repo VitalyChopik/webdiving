@@ -27,9 +27,7 @@
         </clipPath>
         </defs>
       </svg>
-
-    <!-- <img src="<?php  get_template_directory_uri() ?>/dist/images/form__bg.svg" alt=""> -->
-  </div>
+    </div>
     <button class="button-close offer-popup__close" type="button"></button>
     <?php echo do_shortcode('[contact-form-7 id="193" title="form popup" html_class="contact-form"]')?>
   </div>
