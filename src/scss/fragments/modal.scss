@@ -1,0 +1,236 @@
+.offer-popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 23, 44, 0.95);
+  backdrop-filter: blur(7.5px);
+  z-index: 99999;
+
+  &__bg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__body {
+    padding: rem(30) rem(16) rem(14) rem(30);
+    width: rem(420);
+    height: rem(625);
+    position: relative;
+    box-sizing: content-box;
+    border-radius: 10px;
+    // overflow: hidden;
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__title {
+        font-family: 'Franklin Gothic Medium';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 170%;
+        text-align: center;
+        text-transform: uppercase;
+        color: #363636;
+      }
+
+      &__text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 32px;
+        text-align: center;
+        color: #363636;
+        margin-bottom: rem(18);
+      }
+
+      &__label {
+        opacity: 0;
+        position: absolute;
+      }
+
+      &__input,
+      &__textarea {
+        border: 1px solid #363636;
+        min-height: 64px;
+        width: 100%;
+        position: relative;
+        padding: rem(16) rem(16) rem(16) rem(50);
+        margin-bottom: rem(20);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 32px;
+        color: #363636;
+
+        &::placeholder {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 32px;
+          color: #363636;
+        }
+      }
+
+      &__input {}
+
+      &__textarea {}
+
+      &__btn {
+        margin-top: rem(10);
+        height: 64px;
+        width: 100%;
+        background: linear-gradient(120.81deg, #3369E7 18.68%, #8E43E7 81.32%);
+        font-family: 'Franklin Gothic Medium';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 175.02%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+      }
+
+      &__checked {}
+
+      &__name {
+        background-image: url(@img/icons/user.svg);
+        background-repeat: no-repeat;
+        background-size: 18px;
+        background-position: 20px center;
+      }
+
+
+      &__email {
+        background-image: url(@img/icons/email.svg);
+        background-repeat: no-repeat;
+        background-position: center 20px;
+        background-position: 20px center;
+      }
+
+      &__message {
+        background-image: url(@img/icons/message.svg);
+        background-repeat: no-repeat;
+        background-position: center 20px;
+        background-position: 20px center;
+        height: max-content;
+      }
+
+      p {
+        label {
+          display: flex;
+          position: relative;
+          flex-direction: column;
+        }
+      }
+
+      .wpcf7-list-item {
+        label {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          gap: 9px;
+
+          input {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+
+            &:not(:disabled):not(:checked)+span:hover::before {
+              border-color: #F4F5F9;
+            }
+
+            &:not(:disabled):active+span::before {
+              border-color: #F4F5F9;
+            }
+
+            &:focus+span::before {
+              // box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+            }
+
+            &:focus:not(:checked)+span::before {
+              border-color: #F4F5F9;
+            }
+
+            &:checked+span::before {
+              background-image: url("data:image/svg+xml,%3Csvg width='41' height='33' viewBox='0 0 41 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.8823 3.06243C12.0764 2.99468 13.2691 3.0001 14.4632 3.0001C14.4715 3.0001 20.5141 3.0001 20.5141 3.0001C21.7316 3.0001 22.9243 2.99468 24.1177 3.06243C25.2027 3.12339 26.2596 3.25346 27.3117 3.54407C29.5263 4.1551 31.4602 5.43135 32.8581 7.24073C34.2478 9.03859 35 11.2395 35 13.4994C35 15.7619 34.2478 17.9615 32.8581 19.7594C31.4602 21.5681 29.5263 22.845 27.3117 23.456C26.2596 23.7466 25.2027 23.876 24.1177 23.9377C22.9243 24.0054 21.7316 23.9993 20.5375 23.9993C20.5292 23.9993 14.4852 24 14.4852 24C13.2691 23.9993 12.0764 24.0054 10.8823 23.9377C9.79794 23.876 8.74108 23.7466 7.68902 23.456C5.47441 22.845 3.54049 21.5681 2.14255 19.7594C0.752843 17.9615 0 15.7619 0 13.5001C0 11.2395 0.752843 9.03859 2.14255 7.24073C3.54049 5.43135 5.47441 4.1551 7.68902 3.54407C8.74108 3.25346 9.79794 3.12339 10.8823 3.06243Z' fill='url(%23paint0_linear_1071_852)'/%3E%3Cg filter='url(%23filter0_dd_1071_852)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M24 22C28.9706 22 33 18.1944 33 13.5C33 8.80558 28.9706 5 24 5C19.0294 5 15 8.80558 15 13.5C15 18.1944 19.0294 22 24 22Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_dd_1071_852' x='7' y='0' width='34' height='33' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='3'/%3E%3CfeGaussianBlur stdDeviation='0.5'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_1071_852'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='3'/%3E%3CfeGaussianBlur stdDeviation='4'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0'/%3E%3CfeBlend mode='normal' in2='effect1_dropShadow_1071_852' result='effect2_dropShadow_1071_852'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect2_dropShadow_1071_852' result='shape'/%3E%3C/filter%3E%3ClinearGradient id='paint0_linear_1071_852' x1='-8.8559e-07' y1='13.5' x2='17.6035' y2='30.9997' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%233369E7'/%3E%3Cstop offset='1' stop-color='%238E43E7'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+              margin-right: 0;
+            }
+
+            &:disabled+span::before {
+              background-image: url("data:image/svg+xml,%3Csvg width='42' height='35' viewBox='0 0 42 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M17.8823 4.06243C19.0764 3.99468 20.2691 4.0001 21.4632 4.0001C21.4715 4.0001 27.5141 4.0001 27.5141 4.0001C28.7316 4.0001 29.9243 3.99468 31.1177 4.06243C32.2027 4.12339 33.2596 4.25346 34.3117 4.54407C36.5263 5.1551 38.4602 6.43135 39.8581 8.24073C41.2478 10.0386 42 12.2395 42 14.4994C42 16.7619 41.2478 18.9615 39.8581 20.7594C38.4602 22.5681 36.5263 23.845 34.3117 24.456C33.2596 24.7466 32.2027 24.876 31.1177 24.9377C29.9243 25.0054 28.7316 24.9993 27.5375 24.9993C27.5292 24.9993 21.4852 25 21.4852 25C20.2691 24.9993 19.0764 25.0054 17.8823 24.9377C16.7979 24.876 15.7411 24.7466 14.689 24.456C12.4744 23.845 10.5405 22.5681 9.14255 20.7594C7.75284 18.9615 7 16.7619 7 14.5001C7 12.2395 7.75284 10.0386 9.14255 8.24073C10.5405 6.43135 12.4744 5.1551 14.689 4.54407C15.7411 4.25346 16.7979 4.12339 17.8823 4.06243Z' fill='%23F2F6FC'/%3E%3Cg filter='url(%23filter0_dd_1207_12)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M18 23C22.9706 23 27 19.1944 27 14.5C27 9.80558 22.9706 6 18 6C13.0294 6 9 9.80558 9 14.5C9 19.1944 13.0294 23 18 23Z' fill='white'/%3E%3Cpath d='M18 23.25C23.095 23.25 27.25 19.3458 27.25 14.5C27.25 9.65424 23.095 5.75 18 5.75C12.905 5.75 8.75 9.65424 8.75 14.5C8.75 19.3458 12.905 23.25 18 23.25Z' stroke='black' stroke-opacity='0.04' stroke-width='0.5'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_dd_1207_12' x='0.5' y='0.5' width='35' height='34' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='3'/%3E%3CfeGaussianBlur stdDeviation='0.5'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_1207_12'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='3'/%3E%3CfeGaussianBlur stdDeviation='4'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0'/%3E%3CfeBlend mode='normal' in2='effect1_dropShadow_1207_12' result='effect2_dropShadow_1207_12'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect2_dropShadow_1207_12' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A");
+            }
+          }
+
+          .wpcf7-list-item-label {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 32px;
+            color: #363636;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: rem(10);
+            cursor: pointer;
+
+            &::before {
+              content: '';
+              display: inline-block;
+              width: rem(50);
+              height: rem(40);
+              flex-shrink: 0;
+              flex-grow: 0;
+              background-image: url("data:image/svg+xml,%3Csvg width='42' height='35' viewBox='0 0 42 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M17.8823 4.06243C19.0764 3.99468 20.2691 4.0001 21.4632 4.0001C21.4715 4.0001 27.5141 4.0001 27.5141 4.0001C28.7316 4.0001 29.9243 3.99468 31.1177 4.06243C32.2027 4.12339 33.2596 4.25346 34.3117 4.54407C36.5263 5.1551 38.4602 6.43135 39.8581 8.24073C41.2478 10.0386 42 12.2395 42 14.4994C42 16.7619 41.2478 18.9615 39.8581 20.7594C38.4602 22.5681 36.5263 23.845 34.3117 24.456C33.2596 24.7466 32.2027 24.876 31.1177 24.9377C29.9243 25.0054 28.7316 24.9993 27.5375 24.9993C27.5292 24.9993 21.4852 25 21.4852 25C20.2691 24.9993 19.0764 25.0054 17.8823 24.9377C16.7979 24.876 15.7411 24.7466 14.689 24.456C12.4744 23.845 10.5405 22.5681 9.14255 20.7594C7.75284 18.9615 7 16.7619 7 14.5001C7 12.2395 7.75284 10.0386 9.14255 8.24073C10.5405 6.43135 12.4744 5.1551 14.689 4.54407C15.7411 4.25346 16.7979 4.12339 17.8823 4.06243Z' fill='%23F2F6FC'/%3E%3Cg filter='url(%23filter0_dd_1207_12)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M18 23C22.9706 23 27 19.1944 27 14.5C27 9.80558 22.9706 6 18 6C13.0294 6 9 9.80558 9 14.5C9 19.1944 13.0294 23 18 23Z' fill='white'/%3E%3Cpath d='M18 23.25C23.095 23.25 27.25 19.3458 27.25 14.5C27.25 9.65424 23.095 5.75 18 5.75C12.905 5.75 8.75 9.65424 8.75 14.5C8.75 19.3458 12.905 23.25 18 23.25Z' stroke='black' stroke-opacity='0.04' stroke-width='0.5'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_dd_1207_12' x='0.5' y='0.5' width='35' height='34' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='3'/%3E%3CfeGaussianBlur stdDeviation='0.5'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_1207_12'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='3'/%3E%3CfeGaussianBlur stdDeviation='4'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0'/%3E%3CfeBlend mode='normal' in2='effect1_dropShadow_1207_12' result='effect2_dropShadow_1207_12'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect2_dropShadow_1207_12' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A");
+              margin-left: rem(-10);
+              border-radius: 50px;
+              background-repeat: no-repeat;
+              background-position: center right;
+              background-size: 100% 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__close {
+    width: rem(24);
+    height: rem(24);
+    border-radius: 50%;
+    background: #C4C4C4;
+    position: relative;
+    display: flex;
+    margin-left: auto;
+
+    &::after,
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      content: "";
+      width: rem(14);
+      height: rem(2);
+      background-color: #fff;
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}

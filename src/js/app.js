@@ -65,7 +65,7 @@ menuInit()
 * На кнопку для закрытия окна добавь класс button-close
 */
 /* Раскомментировать для использования */
-// togglePopupWindows()
+togglePopupWindows()
 // =======================================================================================================
 
 const statisticsBox = document.querySelectorAll('.statistics__box');

@@ -38,7 +38,7 @@
               'walker'          => new MainMenu(),
             ] );
             ?>
-      <a href="#" class="btn header__btn">Консультация</a>
+      <a href="#" class="btn header__btn" data-type="offerPopup">Консультация</a>
     </nav>
     <button class="header__burger icon-menu">
   <span></span>

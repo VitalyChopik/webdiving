@@ -26,10 +26,11 @@
               'walker'          => new MainMenu(),
             ] );
             ?>
-      <a href="#" class="btn footer__btn">Консультация</a>
+      <a href="#" class="btn footer__btn" data-type="offerPopup">Консультация</a>
     </nav>
   </div>
 </footer>
+<?php echo get_template_part( 'template-parts/modal'); ?>
 </div>
 <?php wp_footer();?>
 </body>

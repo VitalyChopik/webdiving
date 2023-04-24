@@ -25,7 +25,7 @@
         <div class="about__box-text">
           <h2 class="about__box-title"><?php the_field('title');?></h2>
           <p class="about__box-description"><?php the_field('text');?></p>
-          <a href="#" class="btn about__box-btn">Узнать цены</a>
+          <a href="#" class="btn about__box-btn" data-type="offerPopup">Узнать цены</a>
         </div>
         <?php
           $image = get_field('image');
