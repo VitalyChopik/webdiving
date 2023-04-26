@@ -4,10 +4,12 @@
   <div class="single__page">
     <div class="single__container">
       <h1 class="single__title"><?php the_title();?></h1>
-      <span class="single__date"><?php the_time('d, F Y'); ?></span>
-
+      <?php the_post_thumbnail( 'full', array('class' => 'single__image') ); ?>
+      <!-- <span class="single__date"></span> -->
+      <div class="single__content">
+        <?php the_content();?>
+      </div>
     </div>
   </div>
-  <?php the_content();?>
 </main>
 <?php get_footer();?>

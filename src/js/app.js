@@ -164,11 +164,17 @@ if (statisticsBox) {
 
 const tabsItems = document.querySelectorAll('.about__tabs-item'),
   tabsContent = document.querySelectorAll('.about__box');
-tabsItems[0].classList.add('active');
-tabsContent[0].classList.add('active');
 if (tabsItems) {
   // Добавляем обработчик события "click" для каждого элемента в tabsItems
   tabsItems.forEach((item, index) => {
+    if (tabsItems[0].classList.contains('active')) {
+    } else {
+      tabsItems[0].classList.add('active');
+    }
+    if (tabsContent[0].classList.contains('active')) {
+    } else {
+      tabsContent[0].classList.add('active');
+    }
     item.addEventListener('click', () => {
       // Добавляем класс "active" к элементу в tabsContent с тем же индексом
       tabsContent.forEach((content, contentIndex) => {
