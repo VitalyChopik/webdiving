@@ -26,7 +26,7 @@
               'walker'          => new MainMenu(),
             ] );
             ?>
-      <a href="#" class="btn footer__btn" data-type="offerPopup">Консультация</a>
+      <a class="btn footer__btn" data-type="offerPopup">Консультация</a>
     </nav>
   </div>
 </footer>

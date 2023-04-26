@@ -130,10 +130,10 @@ if (statisticsBox) {
       // функция вызываемая при попадании элемента в зону видимости
       // тут вставляем код запуска анимации
       forward.beginElement()
-      animateValue("value1", 1, 250, 2000)
-      animateValue("value2", 1, 20, 2000)
+      animateValue("value1", 1, 100, 2000)
+      animateValue("value2", 1, 10, 2000)
       animateValue("value3", 1, 14, 2000)
-      animateValue("value4", 1, 8, 2000)
+      animateValue("value4", 1, 5, 2000)
     });
   function listenedElementsFun() {
     listenedElements.forEach(item => {
@@ -245,4 +245,20 @@ if (serviceBoxes && showMoreButton) {
 }
 
 
+//передача заголовков в форму
+
+const serviceBoxs = document.querySelectorAll('.services__box');
+const modalHiddenTitle = document.querySelector('.form-title .wpcf7dtx-dynamictext.wpcf7-dynamichidden');
+if (serviceBoxs) {
+  serviceBoxs.forEach(serviceBox => {
+    const serviceBoxTitle = serviceBox.querySelector('.services__text-type').innerHTML;
+
+    const serviceBoxBtn = serviceBox.querySelector('.services__btn');
+    serviceBoxBtn.addEventListener('click', () => {
+      modalHiddenTitle.value = "";
+      modalHiddenTitle.value = serviceBoxTitle;
+    });
+  });
+
+}
 

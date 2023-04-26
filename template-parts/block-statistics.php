@@ -39,7 +39,7 @@
                 </circle>
               </g>
             </svg>
-            <div class="statistics__box-value"><span id="value1">250</span><span>+</span></div>
+            <div class="statistics__box-value"><span id="value1" data-statistics-value="100">100</span><span>+</span></div>
             <span class="statistics__box-label">проектов</span>
           </div>
           <p class="statistics__box-subtitle"><?php the_field('value-1');?></p>
@@ -71,7 +71,7 @@
                 </circle>
               </g>
             </svg>
-            <div class="statistics__box-value"><span id="value2">20</span><span>+</span></div>
+            <div class="statistics__box-value"><span id="value2" data-statistics-value="10">10</span><span>+</span></div>
             <span class="statistics__box-label">человек</span>
           </div>
           <p class="statistics__box-subtitle"><?php the_field('value-2');?></p>
@@ -103,7 +103,7 @@
                 </circle>
               </g>
             </svg>
-            <div class="statistics__box-value"><span id="value1">14</span></div>
+            <div class="statistics__box-value"><span id="value3" data-statistics-value="14">14</span></div>
             <span class="statistics__box-label">дней</span>
           </div>
           <p class="statistics__box-subtitle"><?php the_field('value-3');?></p>
@@ -135,7 +135,7 @@
                 </circle>
               </g>
             </svg>
-            <div class="statistics__box-value"><span id="value1">6</span></div>
+            <div class="statistics__box-value"><span id="value4" data-statistics-value="5">5</span></div>
             <span class="statistics__box-label">лет</span>
           </div>
           <p class="statistics__box-subtitle"><?php the_field('value-4');?></p>

@@ -23,7 +23,7 @@
   }
  
   ?>
-  <a href="<?php echo  $echoLink;?>" class="portfolio__link">
+  <a href="<?php echo  $echoLink;?>" <?php if($customLink){?>target="_blank"<?php } ?> class="portfolio__link">
     <img src="<?php echo get_template_directory_uri()?>/dist/images/icons/portfolio__hover.svg" alt="">
   </a>
 </article>

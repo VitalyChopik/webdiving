@@ -45,6 +45,7 @@
     padding: rem(25) rem(20) rem(20);
     text-align: center;
     position: relative;
+    height: auto;
 
     @include media(992) {
       width: calc(50% - 15px);
