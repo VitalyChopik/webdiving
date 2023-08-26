@@ -1,0 +1,309 @@
+.main-form {
+  padding: rem(30) rem(50) rem(15);
+  width: rem(420);
+  min-height: rem(500);
+  position: relative;
+  box-sizing: content-box;
+
+  // border-radius: 10px;
+  @include media(600) {
+    margin: 0 10px 0 30px;
+    padding: rem(30) rem(15) rem(15);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &.sent {
+      .contact-form__title {
+        display: none;
+      }
+    }
+
+    &__title {
+      font-family: 'Franklin Gothic Medium';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 170%;
+      text-align: center;
+      text-transform: uppercase;
+      color: #363636;
+
+    }
+
+    &__text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 32px;
+      text-align: center;
+      color: #363636;
+      margin-bottom: rem(18);
+    }
+
+    &__label {
+      opacity: 0;
+      position: absolute;
+      left: 24px;
+      top: -7px;
+      color: #19B500;
+      padding: 0 8px;
+      font-size: 14px;
+      line-height: 14px;
+      background: #ffffff;
+      z-index: 1;
+    }
+
+    &__input,
+    &__textarea {
+      border: 1px solid #363636;
+      min-height: 64px;
+      width: 100%;
+      position: relative;
+      padding: rem(16) rem(16) rem(16) rem(50);
+      margin-bottom: rem(20);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 32px;
+      color: #363636;
+
+      &::placeholder {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 32px;
+        color: #363636;
+      }
+    }
+
+    &__input {}
+
+    &__textarea {}
+
+    &__btn {
+      margin-top: rem(10);
+      height: 64px;
+      width: 100%;
+      background: linear-gradient(120.81deg, #3369E7 18.68%, #8E43E7 81.32%);
+      font-family: 'Franklin Gothic Medium';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 175.02%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      cursor: pointer;
+    }
+
+    &__checked {}
+
+    &__name {
+      background-image: url(@img/icons/user.svg);
+      background-repeat: no-repeat;
+      background-size: 18px;
+      background-position: 20px center;
+    }
+
+
+    &__email {
+      background-image: url(@img/icons/email.svg);
+      background-repeat: no-repeat;
+      background-position: center 20px;
+      background-position: 20px center;
+    }
+
+    &__message {
+      background-image: url(@img/icons/message.svg);
+      background-repeat: no-repeat;
+      background-position: center 20px;
+      background-position: 20px center;
+      height: max-content;
+      max-width: 100%;
+    }
+
+    p {
+      label {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+
+        .wpcf7-not-valid-tip {
+          position: absolute;
+          bottom: 5px;
+          padding: 0 8px;
+          font-size: 14px;
+          line-height: 32px;
+          color: #FF0000;
+          background: #ffffff;
+          left: 24px;
+          z-index: 1;
+        }
+      }
+    }
+
+    .wpcf7-list-item {
+      label {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 9px;
+
+        input {
+          // position: absolute;
+          // z-index: -1;
+          // opacity: 0;
+
+          &[type="checkbox"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            -webkit-tap-highlight-color: transparent;
+            cursor: pointer;
+
+            &:focus {
+              outline: 0
+            }
+          }
+
+        }
+
+        .contact-form__checked {
+          height: 22px;
+          width: 35px;
+          border-radius: 50px;
+          display: inline-block;
+          position: relative;
+          margin: 0;
+          background: #000000;
+          background-repeat: no-repeat;
+          transition: all .2s ease;
+
+
+          &:after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: white;
+            border: 0.5px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
+            transition: all .2s cubic-bezier(.5, .1, .75, 1.35);
+            transform: translatex(0);
+          }
+
+          &:checked {
+            background: linear-gradient(120.81deg, #3369E7 18.68%, #8E43E7 81.32%);
+
+
+            &:after {
+              transform: translatex(13px);
+            }
+          }
+        }
+
+        .wpcf7-list-item-label {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14px;
+          color: #363636;
+          position: relative;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &::after {
+    content: "";
+    border-radius: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    z-index: -1;
+  }
+
+  &::before {
+    content: "";
+    border-radius: 20px;
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    left: -20px;
+    top: 20px;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: linear-gradient(154.41deg, #3369E7 0.93%, #8E43E7 87.84%);
+    // transform: translate3d(20px, -20px, 0px);
+  }
+
+  .wpcf7 {
+    .sent {
+      .wpcf7-response-output {
+        position: relative;
+        border: none;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        font-family: 'Franklin Gothic Medium';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 150%;
+        text-align: center;
+        text-transform: uppercase;
+        color: #363636;
+        gap: rem(16);
+        max-width: 200px;
+        padding: 0 !important;
+        // &::after {
+        //   content: "Наш менеджер свяжется с Вами в ближайшее время!";
+        //   font-family: 'Roboto';
+        //   font-style: normal;
+        //   font-weight: 400;
+        //   font-size: 16px;
+        //   line-height: 22px;
+        //   color: #FFFFFF;
+        // }
+
+        &::before {
+          content: "";
+          width: 125px;
+          height: 125px;
+          background-image: url(@img/icons/send__form.svg);
+        }
+      }
+
+      p {
+        display: none;
+      }
+    }
+
+  }
+
+  .wpcf7 form.invalid .wpcf7-response-output,
+  .wpcf7 form.unaccepted .wpcf7-response-output,
+  .wpcf7 form.payment-required .wpcf7-response-output {
+    color: #000000;
+    text-align: center;
+    padding: rem(20);
+
+  }
+}
