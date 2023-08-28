@@ -63,3 +63,16 @@
     border: none;
   }
 }
+
+.crumbs {
+  display: flex;
+  font-size: rem(14);
+  gap: rem(6);
+  &__link {
+    color: #949494;
+  }
+
+  &__link-home {
+    color: $blackColor;
+  }
+}
