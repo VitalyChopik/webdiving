@@ -280,3 +280,18 @@ if (serviceBoxs) {
 
 }
 
+const exampleButton = document.querySelectorAll('.example__button')
+const examplItem = document.querySelectorAll('.item-example')
+
+if (exampleButton.length > 0) {
+    for (let i = 0; i < exampleButton.length; i++) {
+      exampleButton[i].addEventListener('click', () => {
+      if (exampleButton[i].classList.contains('active')) {
+        exampleButton[i].classList.remove('active')
+      } else {
+        exampleButton[i].classList.add('active')
+      }
+    })
+  }
+}
+

@@ -73,6 +73,12 @@
   }
 
   &__link-home {
-    color: $blackColor;
+    color: #363636;
   }
+}
+
+h2.title {
+  @include adaptiveClamp(font-size, 36, 30);
+  line-height: normal;
+  text-transform: uppercase;
 }
