@@ -1,9 +1,15 @@
+.page-contacts {
+  display: flex;
+  flex-direction: column;
+}
+
 .contacts {
   position: relative;
   background-color: #05152CF7;
   padding: rem(40) 0 rem(40) 0;
   min-height: 100%;
   color: $whiteColor;
+  flex: auto;
   &::before {
       position: absolute;
       content: '';
