@@ -103,6 +103,8 @@
   display: flex;
   font-size: rem(14);
   gap: rem(6);
+  align-items: center;
+  flex-wrap: wrap;
   &__link {
     color: #949494;
   }
