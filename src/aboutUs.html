@@ -1,0 +1,89 @@
+
+
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html', {
+'title': 'Примеры работы'
+})
+
+<body>
+  <div class="wrapper">
+    @@include('html/header.html', {})
+    <main class="page">
+      <div data-observ></div>
+      <div class="about-us">
+        <div class="about-us__container">
+            <div class="about-us__crumbs crumbs">
+                <a href="index.html" class="crumbs__link crumbs__link-home">
+                    Главная
+                </a>
+                <p>/</p>
+                <a href="aboutUs.html" class="crumbs__link">
+                    О нас 
+                </a>
+            </div>
+            <h2 class="about-us__title title">
+                О нас
+            </h2>
+            <h3 class="about-us__quote">
+                <a href="index.html">Web Diving Studio</a> — это команда специалистов, оказывающих профессиональные услуги в области веб-разработки и продвижения сайтов по всему СНГ.
+            </h3>
+            <div class="about-us__row">
+                <img src="@img/about-us-item1.png" alt="" class="about-us__item">
+                <img src="@img/about-us-item2.png" alt="" class="about-us__item">
+            </div>
+            <div class="about-us__work work-us">
+                <h3 class=" work-us__title">
+                    Сегодня наша компания занимается:
+                </h3>
+                <ul class="work-us__list">
+                    <li class="work-us__item">
+                        разработкой сайтов, интернет-магазинов, landing-page, сайтов-визиток;
+                    </li>
+                    <li class="work-us__item">
+                        продвижением сайтов, настройкой контекстной рекламы;
+                    </li>
+                    <li class="work-us__item">
+                        технической поддержкой, обслуживанием сайтов; 
+                    </li>
+                    <li class="work-us__item">
+                        и многим другим.
+                    </li>
+                </ul>
+            </div>
+            <div class="about-us__difference difference-us">
+                <h3 class="difference-us__title">
+                    Что нас отличает от других?
+                </h3>
+                <ol class="difference-us__list">
+                    <li class="difference-us__item">
+                        <span>Индивидуальный подход к каждому клиенту.</span> Каждый проект уникален, поэтому наша компания  предоставляет персонализированные услуги для каждого клиента, в зависимости от потребностей и бизнес-целей.
+                    </li>
+                    <li class="difference-us__item">
+                        <span>Широкий спектр услуг.</span> Мы предоставляем не только услуги по разработке сайтов, но и по продвижению, поддержке и обслуживанию сайтов. Это позволяет нашим клиентам получить полный спектр услуг для создания и развития сайтов.
+                    </li>
+                    <li class="difference-us__item">
+                        <span>Опыт и квалификация.</span> Высокий уровень опыта и квалификации в области разработки веб-сайтов и интернет-маркетинга. Это позволяет создавать высококачественные и эффективные веб-сайты.
+                    </li>
+                    <li class="difference-us__item">
+                        <span>Команда экспертов.</span> Имеем команду опытных специалистов, включая веб-дизайнеров, разработчиков, маркетологов и технических специалистов, чтобы создавать наилучшие решения для Вашего бизнеса.
+                    </li>
+                    <li class="difference-us__item">
+                        <span>Поддержка клиентов.</span> Предоставляем высококачественную поддержку клиентов, отвечаем на вопросы и решаем проблемы, связанные с Вашими веб-сайтами.
+                    </li>
+                    <li class="difference-us__item">
+                        <span>Использование новейших технологий.</span> Следим за последними тенденциями и технологиями в области веб-разработки, чтобы создавать современные, быстрые и безопасные сайты.
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    @@include('html/procedure.html', {})
+    @@include('html/portfolio.html', {})
+    </main>
+    @@include('html/footer.html', {})
+    @@include('html/modal.html', {})
+  </div>
+  @@include('html/script.html', {})
+</body>
+</html>

@@ -225,6 +225,7 @@
   }
 
   &__btn {
+    position: relative;
     height: rem(50);
     max-width: rem(214);
     width: 100%;
@@ -259,6 +260,7 @@
       background: linear-gradient(90deg, #3369E7 0%, #8E43E7 100%);
     }
 
+    
     @include media(768) {
       font-size: 18px;
       line-height: 21px;
