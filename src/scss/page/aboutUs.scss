@@ -1,0 +1,98 @@
+.about-us {
+    padding-top: rem(40);
+    @include adaptiveClamp(padding-bottom, 60, 40);
+    color: #363636;
+
+    &__container {
+    }
+
+    &__crumbs {
+        margin-bottom: rem(18);
+    }
+
+    &__title {
+        @include adaptiveClamp(margin-bottom, 30, 10);
+    }
+    h3 {
+        @include adaptiveClamp(font-size, 22, 18);
+        line-height: 160%;
+        font-family: Franklin Gothic Medium;
+        color: #363636;
+    }
+    li {
+        @include adaptiveClamp(font-size, 16, 14);
+        line-height: 200%;
+        color: #363636;
+        span {
+            font-weight: 700;
+        }
+    }
+    &__quote {
+        a {
+            color: #3768E7;
+            font-family: Franklin Gothic Medium;
+            cursor: pointer;
+            &:hover {
+                color: #245ae5;
+            }
+        }
+        @include adaptiveClamp(margin-bottom, 30, 20);
+
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include adaptiveClamp(gap, 32, 16);
+        @include adaptiveClamp(margin-bottom, 40, 20);
+        @media(max-width:768px){
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__work {
+    }
+
+    &__difference {
+    }
+}
+
+.work-us {
+    @include adaptiveClamp(margin-bottom, 40, 20);
+    &__title {
+        margin-bottom: rem(15);
+    }
+
+    &__list {
+        padding-left: rem(7);
+    }
+
+    &__item {
+        list-style: disc;
+        list-style-position: inside;
+        &::marker {
+            font-size: rem(10);
+        }
+    }
+}
+.difference-us {
+
+    &__title {
+        margin-bottom: rem(15);
+    }
+    &__list {
+        padding-left: rem(5);
+    }
+
+    &__item {
+        list-style: decimal;
+        list-style-position: inside;
+        margin-bottom: rem(12);
+    }
+}
