@@ -29,6 +29,7 @@
       <a class="btn footer__btn" data-type="offerPopup">Консультация</a>
     </nav>
   </div>
+  <a href="/sitemap" class="sitemap__link">Карта сайта</a>
 </footer>
 <?php echo get_template_part( 'template-parts/modal'); ?>
 </div>
