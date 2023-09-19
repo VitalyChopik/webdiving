@@ -287,70 +287,71 @@ const exampleButton = document.querySelectorAll('.example__button')
 const exampleButtonAll = document.querySelector('.example__button.all')
 
 const examplItem = document.querySelectorAll('.item-example')
-filterItemWxample(exampleButtonAll);
+
 if (exampleButton.length > 0) {
+  filterItemWxample(exampleButtonAll);
   exampleButton.forEach(button => {
     button.addEventListener('click', () => {
       if (button.classList.contains('active') && !(button.classList.contains('all'))) {
         button.classList.remove('_active');
       } else {
-            exampleButton.forEach(button => {
-              button.classList.remove('_active');
-            });
-            button.classList.add('_active');
+        exampleButton.forEach(button => {
+          button.classList.remove('_active');
+        });
+        button.classList.add('_active');
       }
       filterItemWxample(button);
     });
-    
+
   });
 };
 
 function filterItemWxample(button) {
-    if( button.classList.contains('landing')) {
-      examplItem.forEach(item => {
-        if (item.classList.contains('landing')) {
-          item.classList.add('_active')
-        } else {
-          item.classList.remove('_active')
-        }
-      });
-    } else if( button.classList.contains('shop')) {
-      examplItem.forEach(item => {
-        if (item.classList.contains('shop')) {
-          item.classList.add('_active')
-        } else {
-          item.classList.remove('_active')
-        }
-      });
-    } else if( button.classList.contains('kwis')) {
-      examplItem.forEach(item => {
-        if (item.classList.contains('kwis')) {
-          item.classList.add('_active')
-        } else {
-          item.classList.remove('_active')
-        }
-      });
-    } else if( button.classList.contains('corporate')) {
-      examplItem.forEach(item => {
-        if (item.classList.contains('corporate')) {
-          item.classList.add('_active')
-        } else {
-          item.classList.remove('_active')
-        }
-      });
-    } else if( button.classList.contains('business')) {
-      examplItem.forEach(item => {
-        if (item.classList.contains('business')) {
-          item.classList.add('_active')
-        } else {
-          item.classList.remove('_active')
-        }
-      });
-    } else {
-      examplItem.forEach(item => {
-          item.classList.add('_active')
-      });
-    }
+  if (button.classList.contains('landing')) {
+    examplItem.forEach(item => {
+      if (item.classList.contains('landing')) {
+        item.classList.add('_active')
+      } else {
+        item.classList.remove('_active')
+      }
+    });
+  } else if (button.classList.contains('shop')) {
+    examplItem.forEach(item => {
+      if (item.classList.contains('shop')) {
+        item.classList.add('_active')
+      } else {
+        item.classList.remove('_active')
+      }
+    });
+  } else if (button.classList.contains('kwis')) {
+    examplItem.forEach(item => {
+      if (item.classList.contains('kwis')) {
+        item.classList.add('_active')
+      } else {
+        item.classList.remove('_active')
+      }
+    });
+  } else if (button.classList.contains('corporate')) {
+    examplItem.forEach(item => {
+      if (item.classList.contains('corporate')) {
+        item.classList.add('_active')
+      } else {
+        item.classList.remove('_active')
+      }
+    });
+  } else if (button.classList.contains('business')) {
+    examplItem.forEach(item => {
+      if (item.classList.contains('business')) {
+        item.classList.add('_active')
+      } else {
+        item.classList.remove('_active')
+      }
+    });
+  } else {
+    examplItem.forEach(item => {
+      item.classList.add('_active')
+    });
   }
+}
 
 
