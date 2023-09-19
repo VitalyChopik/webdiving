@@ -1,0 +1,29 @@
+.text-block {
+  margin: rem(20) 0 rem(60);
+
+  p,
+  li {
+    font-size: 16px;
+    color: #363636;
+    line-height: 177%;
+    margin-bottom: 10px;
+
+    strong {
+      font-weight: 700;
+      color: #363636;
+    }
+  }
+
+  ol,
+  ul {
+    padding-left: 20px;
+  }
+
+  ul li {
+    list-style: disc;
+  }
+
+  ol li {
+    list-style: auto;
+  }
+}

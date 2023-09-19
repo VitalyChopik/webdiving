@@ -71,24 +71,24 @@
         $sitemap .= '</ul>';
         echo $sitemap;
       ?>
-      <h2 class="title">Услуги</h2>
+      <!-- <h2 class="title">Услуги</h2> -->
       <?php
-      	$args = array(
-          'post_type' => array('service'),
-          'posts_per_page' => -1,
-        );
-        $query = new WP_Query($args);
-        $sitemap = '<ul>';
+      	// $args = array(
+        //   'post_type' => array('service'),
+        //   'posts_per_page' => -1,
+        // );
+        // $query = new WP_Query($args);
+        // $sitemap = '<ul>';
       
-        while ($query->have_posts()) {
-            $query->the_post();
-            $sitemap .= '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
-        }
+        // while ($query->have_posts()) {
+        //     $query->the_post();
+        //     $sitemap .= '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
+        // }
       
-        wp_reset_postdata();
+        // wp_reset_postdata();
       
-        $sitemap .= '</ul>';
-        echo $sitemap;
+        // $sitemap .= '</ul>';
+        // echo $sitemap;
       ?>
     </div>
   </div>
